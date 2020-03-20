@@ -34,3 +34,4 @@ travis_run apt-get -qq install -y build-essential qt5-default libfontconfig1 mes
 # Install coverage tools
 travis_run_simple pip3 install coverage
 travis_run apt-get -qq install -y lcov
+travis_run gem install coveralls-lcov
