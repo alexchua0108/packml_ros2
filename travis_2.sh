@@ -216,6 +216,7 @@ function test_workspace() {
    travis_fold end test.results
 
    # Create badge
+   travis_run_simple cd /root/
    travis_run_simple mkdir test
    travis_run cd $ROS_WS
    travis_run lcov -c  --initial --rc lcov_branch_coverage=1 --directory build --output-file /root/test/initialcoverage.info
