@@ -223,7 +223,7 @@ function test_workspace() {
    travis_run lcov -c  --rc lcov_branch_coverage=1 --directory build --output-file /root/test/testcoverage.info
    travis_run lcov -a /root/test/initialcoverage.info -a /root/test/testcoverage.info --rc lcov_branch_coverage=1 --output-file /root/test/fullcoverage.info
    travis_run lcov -e /root/test/fullcoverage.info "${PWD}/*" --rc lcov_branch_coverage=1 --output-file /root/test/workspacecoverage.info
-   travis_run lcov -r /root/test/workspacecoverage.info "${PWD}/build/*" --rc lcov_branch_coverage=1 --output-file /root/test/projectcoverage.info
+   travis_run lcov -r /root/test/fullcoverage.info "${PWD}/build/*" --rc lcov_branch_coverage=1 --output-file /root/test/projectcoverage.info
 
    travis_run_wait coveralls-lcov --repo-token "X9XwxFGxQy7gn9JSO4eWXpwXsFdmfznNH" /root/test/projectcoverage.info
 
