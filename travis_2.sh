@@ -221,7 +221,7 @@ function test_workspace() {
    travis_run cd $ROS_WS
    travis_run lcov -c  --initial --rc lcov_branch_coverage=1 --directory build --output-file /root/test/initialcoverage.info
    travis_run lcov -c  --rc lcov_branch_coverage=1 --directory build --output-file /root/test/testcoverage.info
-   travis_run lcov -a /root/test/initialcoverage.info -a /root/test/testcoverage.info --rc lcov_branch_coverage=1 --o /root/test/fullcoverage.info
+   travis_run lcov -a /root/test/initialcoverage.info -a /root/test/testcoverage.info --rc lcov_branch_coverage=1 --output-file /root/test/fullcoverage.info
    travis_run lcov -e /root/test/fullcoverage.info "${PWD}/*" --rc lcov_branch_coverage=1 --output-file /root/test/workspacecoverage.info
    travis_run lcov -r /root/test/workspacecoverage.info "${PWD}/build/*" --rc lcov_branch_coverage=1 --output-file /root/test/projectcoverage.info
 
