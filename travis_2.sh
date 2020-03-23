@@ -224,7 +224,7 @@ function test_workspace() {
    travis_run lcov -a /root/test/initialcoverage.info -a /root/test/testcoverage.info --rc lcov_branch_coverage=1 --o /root/test/fullcoverage.info
    #travis_run cat /root/test/fullcoverage.info | xargs echo -e
    #travis_run lcov -e /root/test/fullcoverage.info '$ROS_WS/*' --rc lcov_branch_coverage=1 --output-file /root/test/workspacecoverage.info
-   travis_run lcov -r /root/test/fullcoverage.info '*/${PWD}/build/*' '*/${PWD}/install/*' '*/${PWD}/log/*' '*/usr/*' '*/opt/*' --rc lcov_branch_coverage=1 --output-file /root/test/projectcoverage.info
+   travis_run lcov -r /root/test/fullcoverage.info '*/build/*' '*/install/*' '*/${PWD}/log/*' '*/usr/*' '*/opt/*' --rc lcov_branch_coverage=1 --output-file /root/test/projectcoverage.info
 
    travis_run_wait coveralls-lcov --repo-token "X9XwxFGxQy7gn9JSO4eWXpwXsFdmfznNH" /root/test/projectcoverage.info
 
